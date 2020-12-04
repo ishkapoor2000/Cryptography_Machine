@@ -2,6 +2,8 @@
 Created on Wed Sep  9 12:36:15 2020
 @author: ISH KAPOOR
 """
+
+
 def cryptomachine():
     '''
     This function takes input of the message to be encrypted or an decrypted message using this program.
@@ -23,16 +25,21 @@ def cryptomachine():
     mode = input("Please enter the mode:\nE(Encode)/D(Decode)\n")
 
     if mode.upper() == 'E':
-        newMessage1 = ''.join([encryptDict[lttr] for lttr in message.lower()]) # Encrypting once
-        newMessage = ''.join([encryptDict[nM1] for nM1 in newMessage1.lower()]) # Encrypting twice
+        newMessage1 = ''.join(
+            [encryptDict[lttr] for lttr in message.lower()])  # Encrypting once
+        newMessage = ''.join([encryptDict[nM1] for nM1 in newMessage1.lower()
+                              ])  # Encrypting twice
     elif mode.upper() == 'D':
-       newMessage1 = ''.join([decryptDict[lttr] for lttr in message.lower()]) # Decrypting once
-       newMessage = ''.join([decryptDict[nM1] for nM1 in newMessage1.lower()]) # Decrypting twice
+        newMessage1 = ''.join(
+            [decryptDict[lttr] for lttr in message.lower()])  # Decrypting once
+        newMessage = ''.join([decryptDict[nM1] for nM1 in newMessage1.lower()
+                              ])  # Decrypting twice
     else:
         # If the values in input is not matching with the keys
         print("please enter a correct choice!")
 
     return newMessage
+
 
 if __name__ == "__main__":
 
